@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "chitietbaihoc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <section class="container" style="min-height:600px">
+        <section class="row">
+
+            <div class="row">
+
+
+                <div class="col-md-9 col-xs-1">
+
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-2 col-xs-1">
+                                <ul class="nav navs-tabs-brand">
+
+                                    <a style="background:#00a8d8" class="list-group-item " href="chitietkhoahoccuatoi.jsp">Quay lại</a>
+
+
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h3>Bài học số 1</h3>
+                                <video id="myVideo" width="640" height="480" controls>
+                                    <source src="Video/movie.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+                                    Your browser does not support the video tag.
+                                </video>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+
+    <jsp:include page="footer.jsp"></jsp:include>
+
+
+    <!--Script chuyển động baner-->
+
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+</body>

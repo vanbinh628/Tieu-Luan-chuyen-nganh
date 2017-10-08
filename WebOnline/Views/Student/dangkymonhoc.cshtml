@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "dangkymonhoc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="content col-md-9 col-sm-9 col-xs-12">
+
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-2"></div>
+
+                            <div class="col-md-6">
+                                <section class="row">
+
+
+
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-primary" style="padding:15px 50px;min-height:15px;">
+                                                <button type="button" class="close" data-dismiss="modal">
+                                                    ×
+                                                </button>
+                                                <h2><span class="glyphicon glyphicon glyphicon-user"> </span> Đăng ký ghi danh khóa học "Lập trình c"</h2>
+                                            </div>
+                                            <div class="modal-body" style="padding:40px 50px">
+
+
+
+                                                <form action="khoahoccuartoi.jsp" method="post" role="form" novalidate="novalidate">
+
+
+                                                    <div class="form-group">
+                                                        <label class="control-label"><span class="glyphicon glyphicon-envelope"> </span> Email <span class="batbuoc">(Bắt buộc)</span></label>
+                                                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus><br>
+
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="usrname"><span class="glyphicon glyphicon-user"></span> Họ tên <span class="batbuoc">(Bắt buộc)</span></label>
+                                                        <input type="email" id="inputEmail" class="form-control" placeholder="Họ tên" required autofocus><br>
+                                                        <span class="field-validation-valid text-danger" data-valmsg-for="HoTen" data-valmsg-replace="true"></span>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label><span class="glyphicon glyphicon-phone"> </span> Số điện thoại <span class="batbuoc">(Bắt buộc)</span></label>
+                                                        <input type="number" id="inputSDT" class="form-control" placeholder="Phone number" required autofocus><br>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label><span class="glyphicon glyphicon-home"> </span> Địa chỉ <span class="batbuoc">(Bắt buộc)</span></label>
+                                                        <input class="form-control" id="DiaChi" name="DiaChi" placeholder="Địa chỉ của bạn" type="text" value="">
+                                                        <span class="field-validation-valid text-danger" data-valmsg-for="DiaChi" data-valmsg-replace="true"></span>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label><span class="glyphicon glyphicon-time"> </span>Mã lớp đăng ký <span class="batbuoc">(Bắt buộc)</span></label>
+                                                        <select class="form-control valid" id="MaLop" name="MaLop">
+                                                            <option selected="selected" value="LopC">L_MVC5</option>
+                                                        </select>
+                                                        <span class="field-validation-valid text-danger" data-valmsg-for="MaLop" data-valmsg-replace="true"></span>
+                                                    </div>
+                                                    <div class="form-group">
+
+                                                        <button type="submit" style="color:#fff;" class="btn btn-primary btn-lg btn-block">
+                                                            Đăng ký
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar col-md-3 col-sm-3 col-xs-12">
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+

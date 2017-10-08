@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "ThaoLuan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <section class="container" style="min-height:400px">
+        <section class="row">
+            <div class="col-md-12">
+
+                <div class="panel panel-primary hoidap">
+                    <div class="panel-heading">
+                        <b><span class="glyphicon glyphicon-question-sign"> </span> Thảo luận</b>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="panel ">
+                            <div class="panel-body">
+                                <form action="#" class="form-inline" data-ajax="true" data-ajax-loading="#ajax-loader" data-ajax-loading-duration="2000" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-update="#result" id="form0" method="get">
+                                    <input type="hidden" name="MaChuDe" value="LT" />
+                                    <div class="form-group">
+                                        <label for="tukhoa">Tìm câu hỏi:</label>
+                                        <input type="text" class="form-control" name="tukhoa" data-autocomplete-source="/CauHoi/QuickSearch?MaChuDe=LT" placeholder="Nhập câu hỏi ở đây!">
+                                    </div>
+                                    <button type="submit" class="btn btn-warning">
+                                        Tìm kiếm
+                                    </button>
+                                </form>
+                                <div id="result">
+                                    <ul class="list-group dscauhoi">
+                                        @foreach(var chuoi in ViewBag.ListChuoi)
+                                        {
+                                            <li class="list-group-item">
+                                                <a href="thamgiathaoluan.html" style="overflow-wrap:break-word" title="type - casting trong c++" class="text-primary"> @chuoi</a>
+                                                <div style="clear:both;">
+                                                    <span class="fontSmall"> <span class="glyphicon glyphicon-time"> </span> 10/12/2016 1:35:07 PM | <span class="glyphicon glyphicon-user"> </span> Admin | Số câu trả lời: 1</span>
+                                                </div>
+                                            </li>
+                                        }
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+</body>

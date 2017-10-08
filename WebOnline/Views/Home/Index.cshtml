@@ -1,0 +1,239 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <section class="container" style="min-height:500px">
+        <!-- Modal đăng nhập-->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="padding:15px 50px;background:#4CAF50;">
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                        <h2><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</h2>
+                    </div>
+                    <div class="modal-body" style="padding:40px 50px;">
+                        <div class="account">
+
+                            <form action="UsersServlet" method="POST" class="form-horizontal" data-bv-message="This value is not valid"
+                                  data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                                  data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                                  data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+
+
+
+                                <form hiden="hidenform" class="form-horizontal">
+
+                                    <div>
+                                        <p style="color:red"></p>
+                                    </div>
+
+                                    <label>Email:</label>
+                                    <input class="w3-input w3-border" type="email" name="email" ng-model="email" placeholder="Email">
+                                    <br>
+                                    <label>Password:</label>
+                                    <input class="w3-input w3-border" type="password" name="pass" ng-model="password" placeholder="Mật khẩu">
+
+                                    <br>
+                                    <input type="hidden" value="login" name="command">
+                                    <button value="login" class="w3-btn w3-green w3-ripple" ng-disabled="error || incomplete">&#10004; Đăng nhập</button>
+                                </form>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-remove"></span> Đóng
+                        </button>
+                        <p>
+                            <a href="../../TaiKhoan/LayLaiMatKhau.html">Quên mật khẩu?</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- end Modal đăng nhập-->
+        <!-- Model Đăng ký-->
+        <div class="modal fade" id="myModal1" role="dialog">
+
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    <div class="modal-header" style="padding:15px 50px;background:#5cb85c;height:100px;">
+                        <button type="button" class="close" data-dismiss="modal">
+                            ×
+                        </button>
+                        <h2><span class="glyphicon glyphicon glyphicon-user"> </span> Đăng ký thành viên</h2>
+                    </div>
+                    <div class="modal-body" style="padding:40px 50px">
+
+                        <div class="account">
+
+                            <form action="UsersServlet" method="POST">
+
+                                <div class="form-group">
+                                    <label for="usrname"><span class="glyphicon glyphicon glyphicon-envelope"></span> Email <span class="batbuoc">(Bắt buộc)</span></label>
+                                    <input class="form-control" id="user-result" name="email" type="email" data-bv-notempty data-bv-notempty-message="Bạn không được bỏ trống Email" />        <span id="user-result"></span>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="usrname"><span class="glyphicon glyphicon glyphicon-envelope"></span> Mật khẩu <span class="batbuoc">(Bắt buộc)</span></label>
+                                    <input class="form-control" id="pass" name="pass" type="password">
+                                    <span id="user-result" class="field-validation-valid text-danger" data-valmsg-for="Pass" data-valmsg-replace="true"></span>
+                                </div>
+
+                                <input type="hidden" value="insert" name="command">
+                                <button type="submit" value="Register" class="w3-btn w3-green w3-ripple">&#10004; Đăng ký</button>
+
+                            </form>
+                        </div>
+
+
+
+                        <!-- <form action="UsersServlet" menthod="post">
+                                         <!--  <div class="form-group">
+                                              <label class="control-label"><span class="glyphicon glyphicon-user"> </span> Họ tên <span class="batbuoc">(Bắt buộc)</span></label>
+                                              <input class="form-control" data-val="true" data-val-length="Họ tên không được phép quá ngắn hoặc quá dài!" data-val-length-max="100" data-val-length-min="10" data-val-required="Họ tên không được để trống!" id="FullName" name="FullName" placeholder="Họ tên" type="text" value="">
+                                              <span class="field-validation-valid text-danger" data-valmsg-for="FullName" data-valmsg-replace="true"></span>
+
+                                          </div>-->
+                        <!--
+                                          <div class="form-group">
+                                              <label for="usrname"><span class="glyphicon glyphicon glyphicon-envelope"></span> Email <span class="batbuoc">(Bắt buộc)</span></label>
+                                              <input class="form-control" data-val="true" data-val-email="Địa chỉ email không hợp lệ." data-val-required="Bạn chưa nhập Email." id="email" name="email" type="text" value="">
+                                              <span id="user-result" class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                          </div>
+                                           <div class="form-group">
+                                              <label><span class="glyphicon glyphicon-eye-open"> </span> Mật khẩu <span class="batbuoc">(Bắt buộc)</span></label>
+                                              <input class="form-control" data-val="true" data-val-length="Mật khẩu phải tối thiếu 8 ký tự, tối đa 100 ký tự." data-val-length-max="100" data-val-length-min="8" data-val-required="Bạn chưa nhập mật khẩu." id="pass" name="pass" placeholder="Mật khẩu" type="password">
+                                              <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                                          </div>-->
+                        <!--  <div class="form-group">
+                              <label><span class="glyphicon glyphicon-eye-open"> </span>Nhập lại mật khẩu <span class="batbuoc">(Bắt buộc)</span></label>
+                              <input class="form-control" data-val="true" data-val-equalto="Nhập lại mật khẩu không khớp." data-val-equalto-other="*.Password" id="ConfirmPassword" name="ConfirmPassword" placeholder="Nhập lại mật khẩu" type="password">
+                              <span class="field-validation-valid text-danger" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
+                          </div>
+                          <div class="form-group">
+                              <label><span class="glyphicon glyphicon-time"> </span>Ngày sinh <span class="batbuoc">(Bắt buộc)</span></label>
+                              <input class="form-control valid" data-val="true" data-val-required="Ngày sinh không được bỏ trống!" id="datepicker" name="BirthDate" placeholder="Ngày sinh của bạn" type="date" value="">
+                              <span class="text-danger field-validation-valid" data-valmsg-for="BirthDate" data-valmsg-replace="true"></span>
+                              <span class="field-validation-valid text-danger" data-valmsg-for="CustomError" data-valmsg-replace="true"></span>
+                          </div>
+                          <div class="form-group">
+                              <label>Giới tính:</label>
+                              <label class="radio-inline"><input checked="checked" data-val="true" data-val-required="Bạn chưa chọn giới tính." id="Gender1" name="Gender" type="radio" value="True"> Nam </label>
+                              <label class="radio-inline"><input id="Gender2" name="Gender" type="radio" value="False">Nữ</label>
+                          </div>
+                          <div class="form-group">
+                              <label><span class="glyphicon glyphicon-phone"> </span>Điện thoại</label>
+                              <input class="form-control" data-val="true" data-val-regex="Số điện thoại không hợp lệ" data-val-regex-pattern="^[0]\d{9,}$" id="PhoneNumber" name="PhoneNumber" placeholder="Số điện thoại liên hệ" type="text" value="">
+                              <span class="field-validation-valid text-danger" data-valmsg-for="PhoneNumber" data-valmsg-replace="true"></span>
+                          </div>
+                        <div class="g-recaptcha" data-sitekey="6LdjVRUTAAAAAIZngSeBDApHMnA_pKcxALxV4sMu"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?k=6LdjVRUTAAAAAIZngSeBDApHMnA_pKcxALxV4sMu&amp;co=aHR0cDovL2NodXllbmxhcHRyaW5oLm5ldDo4MA..&amp;hl=vi&amp;v=r20160926121436&amp;size=normal&amp;cb=yk1v9gsk006g" title="tiện ích con mã xác thực lại" width="304" height="78" role="presentation" frameborder="0" scrolling="no" name="undefined"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea>
+                           </div></div>-->
+                        <!--  <a style="cursor:pointer"id= "myMod">   <button type="submit" style="background:#5cb85c;color:#fff;" class="btn  btn-block">
+                                            <span class="glyphicon glyphicon-ok"> </span> Đăng ký
+                                        </button>
+                                      </a>
+                                      <input type="hidden" value="insert" name="command">
+                                      <input type="submit" value="Register">
+
+
+
+                        </form>
+                        -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--End model đăng ký-->
+
+
+
+        <section class="row">
+
+
+            <div class="row">
+                <!---->
+                <div class="">
+                    <div class="">
+
+                        <div class="col-md-9">
+                            <br><br>
+                            <div class="slideshow-container">
+
+                                <div class="mySlides fade">
+                                    <!-- <div class="numbertext">1 / 3</div>-->
+                                    <img src="/Assets/images/banner1.jpg" style="width:100%" />
+                                    <div class="text">Caption Text</div>
+                                </div>
+
+                                <div class="mySlides fade">
+
+                                    <img src="/Assets/images/banner2.jpg" style="width:100%" />
+                                    <div class="text">Caption Two</div>
+
+                                    <div class="mySlides fade">
+
+                                        <img src="/Assets/images/banner3.jpg" style="width:100%" />
+                                        <div class="text">Caption Three</div>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div style="text-align:center">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!--Thông báo-->
+                        <div class="sidebar col-md-3 col-sm-3 col-xs-12">
+                            <br><br>
+                            <div class="panel panel-default">
+                                <div class="panel-body" align="center"><font size="3" color="green">Thông báo mới </font> </div>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <marquee scrolldelay=150 width="110%" height="300" direction="up" style="font:arial" scrollamount="2" id="bannerthongbao" name="bannerthongbao" onmouseover="this.stop()" onmouseout="this.start()">
+                                                <ul>
+                                                    <li><a href="chitietkhoahoc.html">Thông tin khóa học C căn bản</a></li>
+                                                    <br>
+                                                    <li>Thông tin học lập trình C# </li>
+                                                    <br>
+                                                    <li>Lâp trình java</li>
+                                                </ul>
+                                            </marquee>
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </section>
+
+</body>
+

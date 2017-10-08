@@ -1,0 +1,137 @@
+﻿<html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <title>Website Cá nhân hỗ trợ giáo viên dạy học</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/Assets/images/head.ico" type="image/x-icon" />
+    <link rel="icon" href="/Assets/images/head.ico" type="image/x-icon" />
+    <link href="/Assets/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <link href="/Assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Assets/css/banerchuyendong.css" rel="stylesheet">
+    <link href="/Assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/Assets/css/stylemenu.css">
+    <link rel="stylesheet" type="text/css" href="/Assets/css/style.css">
+    <link rel="stylesheet" media="all" type="text/css" href="/Assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/Assets/css/w3.css">
+    <link href="/Assets/js/bootstrap.min.js" rel="stylesheet">
+    <script src="/Assets/js/angular.min.js"></script>
+    <script src="/Assets/js/myUsers.js"></script>
+
+
+
+</head>
+
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="logo col-md-6 col-sm-6 col-xs-12"><h1><a href="#">Học lập trình</a></h1></div>
+            <p></p>
+            <div class="navbar-right">
+
+                <div>
+                    <p style="color:red"></p>
+                </div>
+
+                <a style="cursor:pointer" id="myBtn"><button type="button" class="btn btn-info" ">Đăng nhập</button> </a>
+                <a style="cursor:pointer" id="btndangky"><button type="button" class="btn btn-warning" style="margin-right: 30px;">Đăng ký</button> </a>
+            </div>
+            <!--End đăng nhập đăng ký-->
+        </div>
+        <p></p>
+        <div class="col-md-13 ">
+            <img src="/Assets/images/hoclaptrinh.jpg" align="bottom" width="1165" height="160" class="img-responsive img-rounded" />
+
+        </div>
+
+        <nav class="navbar navbar-default" role="navigation" style="color:blue;">
+            <!--navbar-default-->
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Đây là menu mobile</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://congdongit.org"></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px; color: blue;">
+                    <ul class="nav navbar-nav" style="color:blue;">
+                        <!-- navbar-nav-->
+                        <li class=""><a href="/Index" style="color:white;">Trang chủ</a></li>
+                        <li class="dropdown" style="color:white;">
+                            <a href="/chitietkhoahoccuatoi" class="dropdown-toggle" style="color:white;" data-toggle="dropdown">Khoá học<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/chitietkhoahoccuatoi">Lập trình C căn bản</a></li>
+                                <li><a href="#">Lập trình hướng đối tượng C++</a></li>
+                                <li><a href="#">Lập trình java</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/khoahoccuatoi" style="color:white;">Khoá học của tôi</a></li>
+                        <li><a href="/thaoluan" style="color:white;">Thảo luận</a></li>
+                        <li><a href="#" style="color:white;">Kiểm tra</a></li>
+                        <li><a href="" style="color:white;">Liên hệ</a></li>
+                        <li><a href="/Gioi-Thieu" style="color:white;">Giới thiệu</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+    </div>
+</header>
+    @RenderBody()
+    <footer class="bg-primary container-fluid " style="">
+        <div class="container col-md-12 col-xs-12">
+            <div class="footer-info text-center">
+                <p>
+                    <div>
+                        © 2016 All Rights Reserved  •  Design by : <font size="3" color="red">Group 12</font>
+                    </div>
+                </p>
+                <p>
+                    <img src="/Assetsimages/guimail.png"> Email hỗ trợ, góp ý: <i>Group_12@gmail.com</i></img>
+                    <a style="color:#fff" href="index.jsp" title="Website Cá nhân hỗ trợ giáo viên dạy học" target="_blank"> | Website Cá nhân hỗ trợ giáo viên dạy học</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="Assets/js/jquery-3.1.1.min"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js" type="text/javascript"></script>
+    <script>
+        $('#contactform').bootstrapValidator();
+    </script>
+    <!--Script chuyển động baner-->
+    <script src="/Assets/Scripts/bannerchuyendong.js"></script>
+    <!--Script chuyển động baner-->
+    <script src="ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+    <script src="ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
+    <!-- <script src="ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js"></script> -->
+    <script src="/Assets/Scripts/respond.min.js"></script>
+    <script src="/Assets/Scripts/jssocials.min.jsp"></script>
+    <script src="myUsers.js"></script>
+    <script src="/Assets/Scripts/dangnhapdangky.js"></script>
+
+    <script src="/Assets/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="/Assets/Scripts/jquery.bxslider.min.js"></script>
+
+
+    <script>
+        $(function () {
+            $('.slider1').bxSlider({
+                slideWidth: 200,
+                minSlides: 1,
+                maxSlides: 10,
+                slideMargin: 25
+            });
+            $(".bx-default-pager").remove();
+        });
+    </script>
+    <script src="Assets/js/jquery-3.1.1.min"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/Assets/js/bootstrap.min.js"></script>
+</body>
+</html>
